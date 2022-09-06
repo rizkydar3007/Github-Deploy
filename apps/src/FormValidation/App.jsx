@@ -1,29 +1,6 @@
-// import "./App.css";
-// import About from "./BootstrapComponent/About";
-// import NavigationBar from "./BootstrapComponent/NavigationBar";
-// import Profile from "./BootstrapComponent/Profile";
-// import Project from "./BootstrapComponent/Projects";
-// import Contacts from "./BootstrapComponent/Contacts";
-// import Footer from "./BootstrapComponent/Footer";
-
-// function App() {
-//   return (
-//     <div>
-//       <NavigationBar />
-//       <Profile />
-//       <About />
-//       <Project />
-//       <Contacts />
-//       <Footer />
-//     </div>
-//   );
-// }
-
-// export default App;
-
 import { useState } from "react";
-import "./App.css";
-import FormInput from "./FormValidation/components/FormInput";
+import "./app.css";
+import FormInput from "./components/FormInput";
 
 const App = () => {
   const [values, setValues] = useState({
@@ -40,7 +17,7 @@ const App = () => {
       name: "username",
       type: "text",
       placeholder: "Username",
-      errorMessage: "Username harus 3-16 karakter dan tidak ada karakter spesial!",
+      errorMessage: "Username should be 3-16 characters and shouldn't include any special character!",
       label: "Username",
       pattern: "^[A-Za-z0-9]{3,16}$",
       required: true,
@@ -50,7 +27,7 @@ const App = () => {
       name: "email",
       type: "email",
       placeholder: "Email",
-      errorMessage: "Harus berisi email yang valid!",
+      errorMessage: "It should be a valid email address!",
       label: "Email",
       required: true,
     },
@@ -66,7 +43,7 @@ const App = () => {
       name: "password",
       type: "password",
       placeholder: "Password",
-      errorMessage: "Password harus berisi 8-20 karakter dan berisi paling tidak 1 huruf kapital, 1 angka , dan 1 karakter spesial!",
+      errorMessage: "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!",
       label: "Password",
       pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
       required: true,
@@ -76,16 +53,15 @@ const App = () => {
       name: "confirmPassword",
       type: "password",
       placeholder: "Confirm Password",
-      errorMessage: "Password tidak sama!",
+      errorMessage: "Passwords don't match!",
       label: "Confirm Password",
-      pattern: setValues.password,
+      pattern: values.password,
       required: true,
     },
   ];
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
-    alert("Form submitted");
+    e.preventDefault();
   };
 
   const onChange = (e) => {
