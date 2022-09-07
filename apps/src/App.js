@@ -31,7 +31,6 @@ const App = () => {
     email: "",
     birthday: "",
     password: "",
-    confirmPassword: "",
   });
 
   const inputs = [
@@ -66,25 +65,15 @@ const App = () => {
       name: "password",
       type: "password",
       placeholder: "Password",
-      errorMessage: "Password harus berisi 8-20 karakter dan berisi paling tidak 1 huruf kapital, 1 angka , dan 1 karakter spesial!",
+      errorMessage: "Password harus berisi 8-20 karakter dan berisi paling tidak 1 huruf , 1 angka , dan 1 karakter spesial!",
       label: "Password",
       pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
-      required: true,
-    },
-    {
-      id: 5,
-      name: "confirmPassword",
-      type: "password",
-      placeholder: "Confirm Password",
-      errorMessage: "Password tidak sama!",
-      label: "Confirm Password",
-      pattern: setValues.password,
       required: true,
     },
   ];
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     alert("Form submitted");
   };
 
