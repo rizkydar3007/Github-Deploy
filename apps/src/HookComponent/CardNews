@@ -1,0 +1,18 @@
+import { useEffect, useState } from "react";
+import { Axios } from "axios";
+
+const CardNews = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    Axios.get("https://newsapi.org/v2/everything?from=2022-08-19&to=2022-08-19&sortBy=popularity&apiKey=9d4f7c792a4c41289762ba66484380f6&q=apple")
+      .then((result) => {
+        setData("data API", result.data());
+      })
+      .catch((err) => {
+        console.log("error: ", err);
+      });
+  }, []);
+};
+
+export default CardNews;
